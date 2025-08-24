@@ -15,3 +15,11 @@ After running the command you should see Reflex initialization and then a url po
 If the port is in use by another application in your system, please change the port to the `rxconfig.py` file in the root (f.ex. frontend_port=3001).
 
 To exit the app, close the browser window and CTRL + C to the server terminal.
+
+# FAQ
+
+## Reflex does not install
+Please refer to https://reflex.dev/docs/getting-started/installation/ as per your system.
+
+## Thing x does not work
+Please email or call me (you know who I am :))
