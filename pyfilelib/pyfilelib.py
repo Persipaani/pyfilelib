@@ -172,11 +172,11 @@ def add_book_button() -> rx.Component:
 
 
 @rx.page(on_load=State.load_books)
-@rx.page(title="Book Dictionary")
+@rx.page(title="Book Database")
 def index() -> rx.Component:
     return rx.stack(
         rx.vstack(
-            rx.heading("Book Dictionary", weight="bold", size="6", as_="h1"),
+            rx.heading("Book Database", weight="bold", size="6", as_="h1"),
             rx.cond(
                 State.loading,
                 rx.text("Loading..."),

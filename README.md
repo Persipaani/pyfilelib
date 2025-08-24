@@ -1,4 +1,4 @@
-# Book Dictionary App
+# Book Database App
 A simple python application that uses a text file as a database and allows users viewing books stored in the file and adding new books to it.
 
 # Requirements
