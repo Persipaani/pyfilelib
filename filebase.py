@@ -42,7 +42,7 @@ class FileBase:
             for item in self.data:
                 f.write(f"{item.name}/{item.author}/{item.isbn}/{item.year}\n")
 
-    def add_item(self, data: dict) -> None:
+    def add_item(self, data: dict[str | str, int]) -> None:
         """Adds an item to the database as Item object."""
         data["year"] = int(data["year"])
         self.data.append(Item(**data))
@@ -78,11 +78,21 @@ class FileBase:
 
 
 if __name__ == "__main__":
-    # For debugging purposes
-    db = FileBase("data.txt")
-    print(db.get_all())
+    # Comment these in for running simple tests for the file database mock.
+    # Before running, make sure to have a db_config.py file with a valid FILE_PATH variable.
+    # Note that these tests do not validate anything themselves and require the user to check printed values and files.
+    # db = FileBase()
+    # print(db.get_all())
+    # print(db.get_all_as_type(Item))
 
-    new_item = Item(name="New Book", author="Author Name", isbn="1234567890", year=1912)
-    db.add_item(new_item)
+    # new_item = {
+    #     "name": "New Book",
+    #     "author": "Author Name",
+    #     "isbn": "1234567890",
+    #     "year": 1912,
+    # }
+    # db.add_item(new_item)
+    # db.export_to_file()
 
-    print(db.get_all())
+    # print(db.get_all())
+    pass

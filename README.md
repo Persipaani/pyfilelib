@@ -3,7 +3,11 @@ A simple python application that uses a text file as a database and allows users
 
 # Requirements
 1. Python (3.12 or later)
-2. Install by running `pip install -r requirements` in the project root.
+2. (optional) Create & activate virtual Python environment (in Windows by running `py -m venv venv` in the project root)
+3. Install by running `pip install -r requirements` in the project root.
+
+Programmed & tested on Windows but should also work with Linux based systems.
+
 
 # Running
 Run by using the provided launcher and passing the database file path. If the file does not exist, it will be created. There is an example `data.txt` file in the project root that you can try out.
@@ -16,10 +20,17 @@ If the port is in use by another application in your system, please change the p
 
 To exit the app, close the browser window and CTRL + C to the server terminal.
 
+Succesfully launced app should look like this:
+![A screenshot of the application GUI](example.png)
+
 # FAQ
 
 ## Reflex does not install
 Please refer to https://reflex.dev/docs/getting-started/installation/ as per your system.
+
+## Reflex and antivirus
+Some antivirus software might prevent Reflex from installing packages from Github. Note that I did not do any malicious changes to Reflex and 
+you will install a clean version of it directly via original means of installation if you follow instructions in this file.
 
 ## Thing x does not work
 Please email or call me (you know who I am :))
