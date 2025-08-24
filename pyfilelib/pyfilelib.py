@@ -45,10 +45,16 @@ class State(rx.State):
         self.dialog_open = False
 
     def toggle_dialog(self):
+        """
+        Toggles the add new book dialog open or closed.
+        """
         self.dialog_open = not self.dialog_open
 
 
 def details_as_list(keyvalue: tuple) -> rx.Component:
+    """
+    Converts a single book details field to a HTML list item that contains icon, label and value.
+    """
     key = keyvalue[0]
     value = keyvalue[1]
     label_and_icon = State.keys_as_labels.get(key, [key.capitalize(), "circle-help"])
@@ -82,6 +88,9 @@ def book_as_card(item: Item) -> rx.Component:
 
 
 def add_book_button() -> rx.Component:
+    """
+    The dialog implementation for adding a new book. Named after the triggering button.
+    """
     return rx.dialog.root(
         rx.card(
             rx.dialog.trigger(

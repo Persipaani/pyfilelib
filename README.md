@@ -29,8 +29,16 @@ Succesfully launced app should look like this:
 Please refer to https://reflex.dev/docs/getting-started/installation/ as per your system.
 
 ## Reflex and antivirus
-Some antivirus software might prevent Reflex from installing packages from Github. Note that I did not do any malicious changes to Reflex and 
+Some antivirus software might prevent Reflex from installing packages from Github. Note that I did not do any malicious changes to Reflex and
 you will install a clean version of it directly via original means of installation if you follow instructions in this file.
+
+For me the solution was to run the launch command again and then it worked.
 
 ## Thing x does not work
 Please email or call me (you know who I am :))
+
+## What I wanted to do but had no time to
+1. Unit tests for the database and front-end side.
+2. Fine tune the code and make sure everything goes according to Reflex model.
+3. Add validation error messages to the add new book dialog.
+4. Fine tune the GUI for accessibility.
