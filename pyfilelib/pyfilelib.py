@@ -28,7 +28,7 @@ class State(rx.State):
         "year": ["Published", "calendar-days"],
     }
 
-    def load_books(self):
+    def load_books(self) -> None:
         """
         Loads books to the state from the database memory.
         """
@@ -36,7 +36,7 @@ class State(rx.State):
         self.books = FILEBASE.get_all_as_type(Item)
         self.loading = False
 
-    def add_book(self, form_data: dict):
+    def add_book(self, form_data: dict) -> None:
         """
         Adds a new book to the database file and memory updates the Reflex state.
         """
@@ -44,7 +44,7 @@ class State(rx.State):
         self.load_books()
         self.dialog_open = False
 
-    def toggle_dialog(self):
+    def toggle_dialog(self) -> None:
         """
         Toggles the add new book dialog open or closed.
         """
@@ -75,14 +75,15 @@ def book_as_card(item: Item) -> rx.Component:
     """
     return rx.card(
         rx.vstack(
-            rx.heading(item.name, weight="bold", size="4", as_="h2"),
+            rx.heading(
+                item.name, weight="bold", size="4", as_="h2", min_height="2.5em"
+            ),
             rx.list.unordered(
                 rx.foreach(item.items()[1:], details_as_list), margin_left="0"
             ),
+            align="start",
+            justify="center",
         ),
-        size="5",
-        align_items="flex-start",
-        flex_wrap="wrap",
         padding="1em",
     )
 
@@ -102,6 +103,7 @@ def add_book_button() -> rx.Component:
                     on_click=State.toggle_dialog,
                 ),
             ),
+            align_content="center",
         ),
         rx.dialog.content(
             rx.dialog.title("Add New Book"),
@@ -190,9 +192,14 @@ def index() -> rx.Component:
             spacing="7",
             align="center",
             width="95%",
+            background="#151515",
+            padding="2em",
+            border_radius="0.5em",
         ),
         justify="center",
         padding_top="2em",
+        overflow_wrap="break-word",
+        word_break="break-all",
     )
 
 

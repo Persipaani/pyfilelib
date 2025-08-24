@@ -7,6 +7,8 @@ import sys
 import subprocess
 from pathlib import Path
 
+path_updated = False
+
 if len(sys.argv) != 2:
     print("Usage: python launcher.py <file_path>")
     sys.exit(1)
@@ -22,8 +24,11 @@ with open(config_file, "w", encoding="utf-8") as f:
     for line in lines:
         if line.strip().startswith("FILE_PATH"):
             f.write(f'FILE_PATH = "{file_path}"\n')
+            path_updated = True
         else:
             f.write(line + "\n")
+    if not path_updated:
+        f.write(f'FILE_PATH = "{file_path}"\n')
 
 # Launch the reflex app in the same directory.
 subprocess.run(["reflex", "run"], cwd=Path(__file__).parent)

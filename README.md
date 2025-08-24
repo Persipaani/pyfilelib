@@ -5,6 +5,7 @@ A simple python application that uses a text file as a database and allows users
 1. Python (3.12 or later)
 2. (optional) Create & activate virtual Python environment (in Windows by running `py -m venv venv` in the project root)
 3. Install by running `pip install -r requirements` in the project root.
+4. (optional) To run tests, also install pytest and run tests by running `pytest` in the project root.
 
 Programmed & tested on Windows but should also work with Linux based systems.
 
@@ -38,12 +39,16 @@ For me the solution was to run the launch command again and then it worked.
 Please email or call me (you know who I am :))
 
 ## What I wanted to do but had no time to
-1. Unit tests for the database and front-end side.
+1. More tests for the backend and frontend.
 2. Fine tune the code and make sure everything goes according to Reflex model.
 3. Add validation error messages to the add new book dialog.
 4. Fine tune the GUI for accessibility.
+5. More CSS tweaking, as always with web development...
 
 ## Why didn't I just make a simple cmd app?
-1. I wanted to make a GUI that could potentially be linked with and actual database later on.
-2. I wanted to try out Reflex that I have not used before.
-3. I wanted to make the "library view" based on cards.
+- I wanted to make a GUI that could potentially be linked with and actual database later on.
+- I wanted to try out Reflex that I have not used before.
+- I wanted to make the "library view" based on cards.
+
+## Known issues
+- The implementation does not support modifying the text file manually while the app is running but this was not one of the requirements either.
